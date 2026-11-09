@@ -2,11 +2,24 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "rewrites": [
     {
+      "source": "/",
+      "destination": "https://automivex-learning.automivex-learning.workers.dev/"
+    },
+    {
       "source": "/:path*",
       "destination": "https://automivex-learning.automivex-learning.workers.dev/:path*"
     }
   ],
   "headers": [
+    {
+      "source": "/",
+      "headers": [
+        {
+          "key": "x-vercel-enable-rewrite-caching",
+          "value": "0"
+        }
+      ]
+    },
     {
       "source": "/:path*",
       "headers": [
